@@ -1,5 +1,6 @@
 -- Appearance & UI
 vim.opt.number = true           -- Show line numbers
+vim.opt.relativenumber = true 	-- Show relative line numbers (useful for movements like 5j, 10k)
 vim.opt.cursorline = true       -- Highlight current line
 vim.opt.cursorcolumn = true     -- Highlight current column
 vim.opt.termguicolors = true    -- Enable 24-bit RGB colors
