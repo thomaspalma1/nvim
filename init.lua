@@ -1,3 +1,4 @@
 require('config.settings')
+require('plugins.nvim-tree')
 require('themes.colorscheme')
 require('lsp')
