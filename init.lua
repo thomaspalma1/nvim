@@ -1,6 +1,6 @@
 require('config.settings')
-require('config.keymaps')
 require('plugins.nvim-tree')
 require('themes.colorscheme')
 require('lsp')
+require('keymaps')
 require('keymaps.nvim-tree')
