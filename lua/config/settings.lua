@@ -13,6 +13,7 @@ vim.opt.tabstop = 2                 -- Number of spaces a tab counts for
 vim.opt.autoindent = true           -- Copy indent from current line when starting new line
 vim.opt.smartindent = true          -- Smart autoindenting when starting new line
 vim.opt.wrap = true                 -- Wrap long lines
+vim.opt.linebreak = true            -- Prevent words from being cut in half (word wrap)
 
 -- Search Behavior
 vim.opt.incsearch = true            -- Show search matches as you type
@@ -26,6 +27,11 @@ vim.cmd.syntax('on')                -- Enable syntax highlighting
 -- Editor Behavior
 vim.opt.updatetime = 250            -- Faster completion and better plugin responsiveness
 vim.opt.clipboard = 'unnamedplus'   -- Use system clipboard for copy/paste
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
 
 -- Encoding
 vim.opt.encoding = 'utf-8'          -- Set file encoding to UTF-8
