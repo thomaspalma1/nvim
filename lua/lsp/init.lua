@@ -2,8 +2,14 @@
 -- Bridges Neovim with the servers installed by Mason and controls the visual 
 -- presentation of diagnostics, dictating how code analysis and errors appear in the editor.
 
-vim.pack.add({ "https://github.com/neovim/nvim-lspconfig" })
-vim.pack.add({ "https://github.com/williamboman/mason-lspconfig.nvim" })
+vim.pack.add({
+    {
+        src = "https://github.com/neovim/nvim-lspconfig"
+    },
+    {
+        src = "https://github.com/williamboman/mason-lspconfig.nvim"
+    }
+})
 
 
 -- Ensure the following LSP servers are installed
