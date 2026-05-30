@@ -5,7 +5,11 @@
 -- hand-in-hand with 'mason-lspconfig' and 'nvim-lspconfig' to actually wire 
 -- these installed servers into Neovim and attach them to your buffers.
 
-vim.pack.add({ "https://github.com/williamboman/mason.nvim" })
+vim.pack.add({
+    {
+        src = "https://github.com/williamboman/mason.nvim"
+    }
+})
 
 -- 1. Initialize the plugin with custom visual settings
 -- Mechanics: Sets up the user interface to display specific symbols 
