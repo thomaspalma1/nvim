@@ -30,3 +30,6 @@ vim.opt.clipboard = 'unnamedplus'   -- Use system clipboard for copy/paste
 
 -- Encoding
 vim.opt.encoding = 'utf-8'          -- Set file encoding to UTF-8
+
+-- Global
+vim.g.mapleader = " "				-- Establishes the Spacebar as the primary prefix for custom mappings.
