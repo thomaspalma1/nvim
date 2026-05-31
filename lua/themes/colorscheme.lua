@@ -1,9 +1,16 @@
 -- Installed themes
 
-vim.pack.add({"https://github.com/folke/tokyonight.nvim"})
-vim.pack.add({"https://github.com/rebelot/kanagawa.nvim"})
-
--- Set active theme
-
-vim.cmd[[colorscheme kanagawa]]
--- vim.cmd[[colorscheme tokyonight]]
+vim.pack.add({
+    {
+        src = "https://github.com/folke/tokyonight.nvim"
+    },
+    {
+        src = "https://github.com/rebelot/kanagawa.nvim"
+    },
+    {
+        src = "https://github.com/scottmckendry/cyberdream.nvim"
+    },
+    {
+        src = "https://github.com/Mofiqul/vscode.nvim"
+    }
+})
