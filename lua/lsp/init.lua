@@ -58,3 +58,15 @@ vim.diagnostic.config({
     update_in_insert = false,   -- Delay updates until leaving insert mode
     severity_sort = true,       -- Sort diagnostics by severity
 })
+
+
+vim.lsp.config("lua_ls", {
+    settings = {
+        Lua = {
+            diagnostics = {
+                -- Diz ao servidor de linguagem para reconhecer o 'vim' como uma variável global válida
+                globals = { "vim" }
+            }
+        }
+    }
+})
