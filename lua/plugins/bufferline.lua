@@ -1,7 +1,7 @@
 vim.pack.add({
 	{
-		src = "https://github.com/akinsho/bufferline.nvim"
-	}
+		src = "https://github.com/akinsho/bufferline.nvim",
+	},
 })
 
-require("bufferline").setup{}
+require("bufferline").setup({})

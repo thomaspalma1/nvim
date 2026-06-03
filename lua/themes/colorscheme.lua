@@ -17,6 +17,6 @@ vim.pack.add({
 		src = "https://github.com/mofiqul/dracula.nvim",
 	},
 	{
-		src = "https://github.com/morhetz/gruvbox"
+		src = "https://github.com/morhetz/gruvbox",
 	},
 })
