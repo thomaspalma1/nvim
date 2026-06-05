@@ -1,4 +1,4 @@
--- Define the file path used to persist the active theme across sessions 
+-- Define the file path used to persist the active theme across sessions
 -- and establish a reliable fallback option.
 local theme_file = vim.fn.stdpath("data") .. "/current_theme.txt"
 local default_theme = "default"
@@ -10,13 +10,13 @@ if vim.fn.filereadable(theme_file) == 1 then
 	success = pcall(vim.cmd, "colorscheme " .. saved_theme)
 end
 
--- Apply the default theme if the state file does not exist or if the 
+-- Apply the default theme if the state file does not exist or if the
 -- saved theme fails to load.
 if not success then
 	vim.cmd("colorscheme " .. default_theme)
 end
 
--- Automatically update the persisted file whenever the user changes 
+-- Automatically update the persisted file whenever the user changes
 -- the colorscheme during the current session.
 vim.api.nvim_create_autocmd("ColorScheme", {
 	group = vim.api.nvim_create_augroup("ThemePersistence", { clear = true }),
