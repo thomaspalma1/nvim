@@ -23,6 +23,7 @@ require("plugins.smear-cursor")
 -- have been fully initialized to prevent missing function errors.
 require("keymaps.nvim-tree")
 require("keymaps.telescope")
+require("keymaps.bufferline")
 
 -- Initialize the package manager first to ensure all external binaries and
 -- dependencies are available on the system. Once they are ready, load the
