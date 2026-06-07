@@ -44,6 +44,7 @@ vim.lsp.enable({
 	"terraformls",
 	"yamlls",
 	"ruff",
+	"html-lsp",
 })
 
 -- Diagnostic UI Configuration
