@@ -36,3 +36,7 @@ vim.keymap.set("v", '"', 'c""<Esc>P')
 
 vim.keymap.set("n", "<C-j>", ":m .+1<CR>==")
 vim.keymap.set("n", "<C-k>", ":m .-2<CR>==")
+
+-- Allow a fast and ergonomic exit from insert mode by mapping the 'jk' 
+-- sequence to the Escape key, keeping hands positioned on the home row.
+vim.keymap.set("i", "jk", "<Esc>")
