@@ -19,4 +19,10 @@ vim.pack.add({
 	{
 		src = "https://github.com/morhetz/gruvbox",
 	},
+	{
+		src = "https://github.com/eldritch-theme/eldritch.nvim",
+	},
+	{
+		src = "https://github.com/sainnhe/everforest",
+	},
 })
