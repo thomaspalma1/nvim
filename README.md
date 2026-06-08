@@ -10,3 +10,29 @@
 <p align="justify">
    Repository dedicated to my Neovim configuration.
 </p>
+
+### About the Project
+
+> To Do
+
+### Installation
+
+> To Do
+
+### Dependencies
+
+> To Do
+
+### Project Structure
+
+> To Do
+
+### Customization
+
+> To Do
+
+### Known Limitations
+
+> To Do
+
+### Future Improvements
