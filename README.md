@@ -1,6 +1,6 @@
 <h3>
    <p align="center">
-      nvim
+      Neovim Configuration
    </p>
 </h3>
 <p align="center">
