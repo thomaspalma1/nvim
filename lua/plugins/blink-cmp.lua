@@ -8,21 +8,32 @@ vim.pack.add({
 })
 
 require("blink.cmp").setup({
-	-- Comportamento do teclado (Tab para navegar nas opções, Enter para confirmar)
+	-- Configure the keyboard behavior using the 'super-tab' preset,
+	-- allowing intuitive navigation through completion options with
+	-- the Tab key and quick confirmation using Enter.
 	keymap = { preset = "super-tab" },
 
 	appearance = {
-		-- Herda as cores do seu tema nativo para não quebrar o visual
+		-- Inherit highlight groups from the active colorscheme to ensure
+		-- the completion menu blends seamlessly with the current visual
+		-- aesthetics without breaking the layout.
 		use_nvim_cmp_as_default = true,
-		-- Estilo da fonte dos ícones (ajuste para 'normal' se ficarem bugados)
+
+		-- Set the Nerd Font variant to 'mono' to maintain consistent
+		-- icon spacing and prevent visual alignment bugs within the
+		-- completion dropdown.
 		nerd_font_variant = "mono",
 	},
 
 	sources = {
-		-- Ordem das sugestões: Inteligência da linguagem > pastas > recortes > palavras do arquivo
+		-- Prioritize completion suggestions by defining the source hierarchy:
+		-- language server intelligence first, followed by file paths,
+		-- code snippets, and finally active buffer words.
 		default = { "lsp", "path", "snippets", "buffer" },
 	},
 
-	-- Ativa a janela flutuante com a documentação de parâmetros das funções
+	-- Enable the floating signature help window to automatically display
+	-- function parameter documentation and type hints while typing
+	-- inside parentheses.
 	signature = { enabled = true },
 })
