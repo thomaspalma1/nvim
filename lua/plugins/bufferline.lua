@@ -6,8 +6,9 @@ vim.pack.add({
 
 require("bufferline").setup({
 	options = {
-		-- Your existing options can stay here
-
+		-- Prevent buffer tabs from overlapping the sidebar file explorer
+		-- by pushing the tabline to the right and displaying a centered,
+		-- separated title for better visual hierarchy.
 		offsets = {
 			{
 				filetype = "NvimTree",
@@ -19,14 +20,16 @@ require("bufferline").setup({
 	},
 
 	highlights = {
-		-- Targets the empty space after the buffer tabs
+		-- Dynamically extract the background color from the editor's default
+		-- highlight group (Normal) and apply it to the empty tabline space,
+		-- ensuring seamless integration when switching colorschemes.
 		fill = {
-			-- Dynamically extracts the background color from the editor's default
-			-- background (Normal) and applies it to the empty area.
 			bg = { attribute = "bg", highlight = "Normal" },
 		},
-		-- Optional: If the separators between the empty space and the tabs also look
-		-- disconnected, you can blend them in as well.
+
+		-- Blend the visual separators into the standard background color
+		-- to remove harsh lines and maintain a consistent, minimal
+		-- aesthetic across the top bar.
 		separator = {
 			bg = { attribute = "bg", highlight = "Normal" },
 		},
