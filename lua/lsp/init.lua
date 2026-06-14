@@ -1,6 +1,6 @@
--- LSP Configuration & Diagnostics
--- Bridges Neovim with the servers installed by Mason and controls the visual
--- presentation of diagnostics, dictating how code analysis and errors appear in the editor.
+-- Initialize language server protocols (LSP) and manage diagnostic
+-- presentations to integrate real-time code analysis, error tracking,
+-- and syntax validation directly into the editor interface.
 
 vim.pack.add({
 	{
@@ -11,8 +11,9 @@ vim.pack.add({
 	},
 })
 
--- Ensure the following LSP servers are installed
--- Primarily focused on DevOps and Back-end development
+-- Automate the installation of essential language servers, focusing
+-- primarily on DevOps, infrastructure as code, and backend development
+-- tools to guarantee a consistent environment across machines.
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"ansiblels",
@@ -30,7 +31,9 @@ require("mason-lspconfig").setup({
 	},
 })
 
--- Enable and initialize LSP servers
+-- Activate the configured language servers to attach them to the
+-- corresponding file types, enabling intelligent code completion,
+-- definitions, and real-time syntax checking.
 vim.lsp.enable({
 	"ansiblels",
 	"bashls",
@@ -47,21 +50,34 @@ vim.lsp.enable({
 	"html-lsp",
 })
 
--- Diagnostic UI Configuration
--- Controls how syntax hints and code errors appear within the text editor.
+-- Shape the visual behavior of the diagnostic engine to display
+-- warnings and errors without overwhelming the active workspace.
 vim.diagnostic.config({
-	virtual_text = true, -- Show inline text diagnostics
-	signs = true, -- Show icons in the sign column
-	underline = true, -- Underline diagnostic issues
-	update_in_insert = false, -- Delay updates until leaving insert mode
-	severity_sort = true, -- Sort diagnostics by severity
+	-- Display diagnostic messages directly alongside the code on the same line.
+	virtual_text = true,
+
+	-- Render severity indicators (errors, warnings) in the leftmost gutter column.
+	signs = true,
+
+	-- Draw a visible underline beneath the specific code segment causing the issue.
+	underline = true,
+
+	-- Wait until insert mode is exited before refreshing diagnostics to
+	-- prevent distracting visual shifts and interruptions while typing.
+	update_in_insert = false,
+
+	-- Prioritize more critical issues (e.g., rendering errors above hints)
+	-- when multiple diagnostic messages overlap on the same line.
+	severity_sort = true,
 })
 
 vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {
 			diagnostics = {
-				-- Diz ao servidor de linguagem para reconhecer o 'vim' como uma variável global válida
+				-- Instruct the language server to recognize 'vim' as a valid
+				-- global variable, eliminating false-positive "undefined global"
+				-- warnings when editing Neovim configuration files.
 				globals = { "vim" },
 			},
 		},
