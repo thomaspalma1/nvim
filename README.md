@@ -28,7 +28,8 @@ Once you have successfully installed Neovim and confirmed it is working correctl
 
 To make the configuration setup as seamless as possible, I've created an automated installation script that handles the heavy lifting for you.
 
-**1. Run the installation script:**```bash
+**1. Run the installation script:**
+```bash
 curl -sL https://raw.githubusercontent.com/thomaspalma1/nvim/main/install.sh | bash
 ```
 
