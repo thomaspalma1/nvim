@@ -60,9 +60,15 @@ sudo apt install ripgrep fd-find python3-venv
 
 ## 🏗️ Project Structure
 
+The image below shows how this project's directories are organized. It also includes brief notes explaining the purpose of each file and folder.
+
+One of Neovim's greatest strengths is its flexibility. There is no single "correct" way to organize configuration files. While the community widely adopts certain structures, everyone is free to adapt their setup to fit their own needs and preferences.
+
+In my case, I chose to organize the files as shown below. This structure gives me greater control over each part of the configuration while keeping everything organized by context and responsibility. As a result, it's much easier to locate, understand, and modify any configuration whenever needed.
+
 ![ProjectStructure](docs/config_structure_overview.png)
 
-### 🛠️ Customization
+## 🛠️ Customization
 
 This configuration was designed to be highly modular and easy to customize. Because each component is isolated in its own directory, you can tweak specific behaviors without breaking the entire editor. 
 
@@ -74,12 +80,12 @@ Common customizations include:
 * **Changing the active colorscheme:** Browse and apply new themes interactively using the Telescope theme picker, or set your permanent default inside `lua/themes/colorscheme.lua`.
 * **Adjusting editor options:** Tweak foundational rules like line numbers, indentation size, and clipboard integrations directly in `lua/core/settings.lua`.
 
-### ⚠️ Known Limitations
+## ⚠️ Known Limitations
 
 * **Manual Dependencies:** Some plugins require external system dependencies to be installed manually (such as `ripgrep`, `fd`, Node.js, and Python virtual environments), which are not handled automatically by the Neovim package manager.
 * **OS Compatibility:** This configuration was primarily built and tested on Linux (Ubuntu/Debian). While Neovim is cross-platform, macOS or Windows (WSL) users might need to adapt specific paths, clipboard providers, or Mason dependencies to ensure full functionality.
 * **Initial Loading Time:** The very first time you launch the editor, the bootstrap process might take a few minutes as Mason downloads and compiles the required language server binaries in the background.
 
-### 🔮 Future Improvements
+## 🔮 Future Improvements
 
 * Introduce `conform.nvim` to automatically format Terraform, Python, and Lua files on save.
