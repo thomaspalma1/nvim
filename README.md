@@ -24,8 +24,9 @@ To make the setup process as seamless as possible, I've created an automated ins
 
 **1. Run the installation script:**
 ```bash
-curl -sL [https://raw.githubusercontent.com/thomaspalma1/nvim/refs/heads/main/install.sh](https://raw.githubusercontent.com/thomaspalma1/nvim/refs/heads/main/install.sh) | bash
+curl -sL https://raw.githubusercontent.com/thomaspalma1/nvim/main/install.sh | bash
 ```
+
 *(Note: The script will automatically handle backing up your existing configuration and cloning this repository.)*
 
 **2. Launch Neovim:**
