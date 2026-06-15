@@ -7,7 +7,7 @@
 
 Repository dedicated to my Neovim configuration.
 
-### About the Project
+### 🎯 About the Project
 
 A highly modular, performance-oriented Neovim configuration written entirely in Lua. I built this setup primarily to optimize my own daily workflow as a DevOps engineer and Back-end developer, but it is perfectly suited for anyone who shares these same needs. It provides a robust development environment right out of the box, featuring real-time code intelligence, fast file navigation, and a refined, distraction-free visual interface.
 
@@ -18,7 +18,7 @@ A highly modular, performance-oriented Neovim configuration written entirely in 
 * Refined UI: Clean aesthetics managed by `Lualine`, `Bufferline`, and `Smear-cursor` for smooth visual feedback.
 * Modular Architecture: Responsibilities are strictly isolated into dedicated files, ensuring the codebase remains highly maintainable and easy to extend.
 
-### Installation
+### 📥 Installation
 
 Before we start, please note that this repository does not cover how to install Neovim itself. 
 
@@ -41,7 +41,7 @@ nvim
 ```
 *Upon the first launch, the configuration will automatically set itself up, downloading the package manager and installing all defined plugins and language servers. Restart Neovim once the process is complete.*
 
-### Dependencies
+### 📦 Dependencies
 
 To ensure all features—especially fuzzy finding, syntax highlighting, and visual icons—function correctly, the following system dependencies are required:
 
@@ -58,7 +58,7 @@ sudo apt update
 sudo apt install ripgrep fd-find python3-venv
 ```
 
-### Project Structure
+### 🏗️ Project Structure
 
 ![ProjectStructure](docs/config_structure_overview.png)
 
@@ -80,7 +80,7 @@ nvim
 └── nvim-pack-lock.json              # Lock plugin versions to ensure reproducible installations on other machines.
 ```
 
-### Customization
+### 🛠️ Customization
 
 This configuration was designed to be highly modular and easy to customize. Because each component is isolated in its own directory, you can tweak specific behaviors without breaking the entire editor. 
 
@@ -92,12 +92,12 @@ Common customizations include:
 * **Changing the active colorscheme:** Browse and apply new themes interactively using the Telescope theme picker, or set your permanent default inside `lua/themes/colorscheme.lua`.
 * **Adjusting editor options:** Tweak foundational rules like line numbers, indentation size, and clipboard integrations directly in `lua/core/settings.lua`.
 
-### Known Limitations
+### ⚠️ Known Limitations
 
 * **Manual Dependencies:** Some plugins require external system dependencies to be installed manually (such as `ripgrep`, `fd`, Node.js, and Python virtual environments), which are not handled automatically by the Neovim package manager.
 * **OS Compatibility:** This configuration was primarily built and tested on Linux (Ubuntu/Debian). While Neovim is cross-platform, macOS or Windows (WSL) users might need to adapt specific paths, clipboard providers, or Mason dependencies to ensure full functionality.
 * **Initial Loading Time:** The very first time you launch the editor, the bootstrap process might take a few minutes as Mason downloads and compiles the required language server binaries in the background.
 
-### Future Improvements
+### 🔮 Future Improvements
 
 * Introduce `conform.nvim` to automatically format Terraform, Python, and Lua files on save.
