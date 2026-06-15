@@ -20,10 +20,15 @@ A highly modular, performance-oriented Neovim configuration written entirely in 
 
 ### Installation
 
-To make the setup process as seamless as possible, I've created an automated installation script. 
+Before we start, please note that this repository does not cover how to install Neovim itself. 
 
-**1. Run the installation script:**
-```bash
+Because the installation process varies significantly depending on your operating system (Linux, macOS, or Windows) and package manager, the best approach is to follow the [official Neovim installation guide](https://github.com/neovim/neovim/blob/master/INSTALL.md) for instructions tailored to your specific environment.
+
+Once you have successfully installed Neovim and confirmed it is working correctly, you are ready to apply this project's files. 
+
+To make the configuration setup as seamless as possible, I've created an automated installation script that handles the heavy lifting for you.
+
+**1. Run the installation script:**```bash
 curl -sL https://raw.githubusercontent.com/thomaspalma1/nvim/main/install.sh | bash
 ```
 
