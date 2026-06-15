@@ -7,7 +7,7 @@
 
 Repository dedicated to my Neovim configuration.
 
-### 🎯 About the Project
+## 🎯 About the Project
 
 A highly modular, performance-oriented Neovim configuration written entirely in Lua. I built this setup primarily to optimize my own daily workflow as a DevOps engineer and Back-end developer, but it is perfectly suited for anyone who shares these same needs. It provides a robust development environment right out of the box, featuring real-time code intelligence, fast file navigation, and a refined, distraction-free visual interface.
 
@@ -18,7 +18,7 @@ A highly modular, performance-oriented Neovim configuration written entirely in 
 * Refined UI: Clean aesthetics managed by `Lualine`, `Bufferline`, and `Smear-cursor` for smooth visual feedback.
 * Modular Architecture: Responsibilities are strictly isolated into dedicated files, ensuring the codebase remains highly maintainable and easy to extend.
 
-### 📥 Installation
+## 📥 Installation
 
 Before we start, please note that this repository does not cover how to install Neovim itself. 
 
@@ -41,7 +41,7 @@ nvim
 ```
 *Upon the first launch, the configuration will automatically set itself up, downloading the package manager and installing all defined plugins and language servers. Restart Neovim once the process is complete.*
 
-### 📦 Dependencies
+## 📦 Dependencies
 
 To ensure all features—especially fuzzy finding, syntax highlighting, and visual icons—function correctly, the following system dependencies are required:
 
@@ -58,27 +58,9 @@ sudo apt update
 sudo apt install ripgrep fd-find python3-venv
 ```
 
-### 🏗️ Project Structure
+## 🏗️ Project Structure
 
 ![ProjectStructure](docs/config_structure_overview.png)
-
-Below is the conceptual architecture of the configuration:
-
-```text
-nvim
-├── init.lua                         # Orchestrate the configuration by loading all modules in the correct execution order.
-├── lua
-│   ├── autocmds
-│   │   └── init.lua                 # Define event-driven behaviors and automated tasks across the editor.
-│   ├── core
-│   │   └── settings.lua             # Establish the foundational behavior by setting native Neovim options.
-│   ├── keymaps                      # Centralize all keyboard shortcuts, isolating global bindings from plugin-specific rules.
-│   ├── lsp
-│   │   └── init.lua                 # Initialize language servers and integrate code intelligence features.
-│   ├── plugins                      # Isolate individual plugin configurations for UI, navigation, and functionality.
-│   └── themes                       # Set visual colors and handle dynamic theme switching across sessions.
-└── nvim-pack-lock.json              # Lock plugin versions to ensure reproducible installations on other machines.
-```
 
 ### 🛠️ Customization
 
