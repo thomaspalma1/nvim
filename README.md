@@ -18,32 +18,6 @@ A highly modular, performance-oriented Neovim configuration written entirely in 
 * Refined UI: Clean aesthetics managed by `lualine`, `bufferline`, and `smear-cursor` for smooth visual feedback.
 * Modular Architecture: Responsibilities are strictly isolated into dedicated files, ensuring the codebase remains highly maintainable and easy to extend.
 
-## 📥 Installation
-
-Before we start, please note that this repository does not cover how to install Neovim itself. 
-
-Because the installation process varies significantly depending on your operating system (Linux, macOS, or Windows) and package manager, the best approach is to follow the [official Neovim installation guide](https://github.com/neovim/neovim/blob/master/INSTALL.md) for instructions tailored to your specific environment.
-
-Once you have successfully installed Neovim and confirmed it is working correctly, you are ready to apply this project's files. 
-
-To make the configuration setup as seamless as possible, I've created an automated installation script that handles the heavy lifting for you.
-
-> [!IMPORTANT]  
-> Crucial information necessary for users to succeed.
-
-**1. Run the installation script:**
-```bash
-curl -sL https://raw.githubusercontent.com/thomaspalma1/nvim/main/install.sh | bash
-```
-
-*The script will automatically handle backing up your existing configuration and cloning this repository.*
-
-**2. Launch Neovim:**
-```bash
-nvim
-```
-*Upon the first launch, the configuration will automatically set itself up, downloading the package manager and installing all defined plugins and language servers. Restart Neovim once the process is complete.*
-
 ## 📦 Dependencies
 
 Since this configuration was built from scratch without relying on distributions or configuration frameworks such as LazyVim, NvChad, or similar projects and some dependencies had to be installed manually along the way. To ensure all features (especially fuzzy finding, syntax highlighting, and visual icons) function correctly, the following system dependencies are required:
@@ -63,6 +37,32 @@ In my case, I'm using Linux Mint, which is based on Debian/Ubuntu, so the packag
 sudo apt update
 sudo apt install ripgrep fd-find python3-venv
 ```
+
+## 📥 Installation
+
+Before we start, please note that this repository does not cover how to install Neovim itself. 
+
+Because the installation process varies significantly depending on your operating system (Linux, macOS, or Windows) and package manager, the best approach is to follow the [official Neovim installation guide](https://github.com/neovim/neovim/blob/master/INSTALL.md) for instructions tailored to your specific environment.
+
+Once you have successfully installed Neovim and confirmed it is working correctly, you are ready to apply this project's files. 
+
+To make the configuration setup as seamless as possible, I've created an automated installation script that handles the heavy lifting for you.
+
+> [!IMPORTANT]
+> It’s essential that you have already completed the previous topic[Dependencies] and carefully followed each section before continuing. This ensures that everything is properly configured so Neovim runs smoothly and the settings from this project are applied correctly without any issues.
+
+**1. Run the installation script:**
+```bash
+curl -sL https://raw.githubusercontent.com/thomaspalma1/nvim/main/install.sh | bash
+```
+
+*The script will automatically handle backing up your existing configuration and cloning this repository.*
+
+**2. Launch Neovim:**
+```bash
+nvim
+```
+*Upon the first launch, the configuration will automatically set itself up, downloading the package manager and installing all defined plugins and language servers. Restart Neovim once the process is complete.*
 
 ## 🏗️ Project Structure
 
