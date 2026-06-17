@@ -28,6 +28,9 @@ Once you have successfully installed Neovim and confirmed it is working correctl
 
 To make the configuration setup as seamless as possible, I've created an automated installation script that handles the heavy lifting for you.
 
+> [!IMPORTANT]  
+> Crucial information necessary for users to succeed.
+
 **1. Run the installation script:**
 ```bash
 curl -sL https://raw.githubusercontent.com/thomaspalma1/nvim/main/install.sh | bash
@@ -43,15 +46,18 @@ nvim
 
 ## 📦 Dependencies
 
-To ensure all features—especially fuzzy finding, syntax highlighting, and visual icons—function correctly, the following system dependencies are required:
+Since this configuration was built from scratch without relying on distributions or configuration frameworks such as LazyVim, NvChad, or similar projects and some dependencies had to be installed manually along the way. To ensure all features (especially fuzzy finding, syntax highlighting, and visual icons) function correctly, the following system dependencies are required:
 
 * Neovim version `0.12.0` or higher.
 * A patched font (e.g., *JetBrainsMono Nerd Font*) set as your terminal's default to properly render icons in the statusline and file explorer.
-* Node.js and npm required by Mason to install and run certain language servers (e.g., `pyright`, `bashls`).
-* Python and pip required by Mason for Python-based tooling (e.g., `ruff`).
-* LuaRocks required for Lua package management.
+* Node.js and npm, required by Mason to install and run certain language servers (e.g., `pyright`, `bashls`).
+* Python and pip, required by Mason for Python-based tooling (e.g., `ruff`).
+* LuaRocks, required for Lua package management.
+* `ripgrep`, required for fast fuzzy finding.
+* `fd-find`, required as a faster alternative to `find`.
+* `python3-venv`, required to create isolated Python environments for tooling like `ruff`.
 
-For Ubuntu/Debian-based systems, you will need to install the following search and environment dependencies:
+In my case, I'm using Linux Mint, which is based on Debian/Ubuntu, so the package names below correspond to Debian-based distributions. Depending on your system, you may already have some of these installed; if not, install them manually, keeping in mind that package names can vary across operating systems and Linux distributions. Use the list below as a reference—if you're on a different system, look for the equivalent packages in your platform's package manager:
 
 ```bash
 sudo apt update
@@ -67,6 +73,12 @@ One of Neovim's greatest strengths is its flexibility. There is no single "corre
 In my case, I chose to organize the files as shown below. This structure gives me greater control over each part of the configuration while keeping everything organized by context and responsibility. As a result, it's much easier to locate, understand, and modify any configuration whenever needed.
 
 ![ProjectStructure](docs/config_structure_overview.png)
+
+As you can see in the image, there are short notes next to each directory and file, providing a concise explanation of their purpose.
+
+If you're interested, I encourage you to explore those directories and files. Each file contains a more detailed description explaining what it does and the purpose behind each configuration.
+
+This makes it easier to understand the project's structure and helps you see not only how the configurations were implemented, but also the reasoning behind each decision.
 
 ## 🛠️ Customization
 
