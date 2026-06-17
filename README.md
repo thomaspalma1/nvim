@@ -1,6 +1,6 @@
 # Neovim Configuration
 
-<p align="center">
+<p align="justify">
    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/neovim/neovim-original.svg" width="50" height="50"/>
    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg" width="50" height="50"/>
 </p>
@@ -14,8 +14,8 @@ A highly modular, performance-oriented Neovim configuration written entirely in 
 **Core Highlights:**
 * Intelligent Autocompletion: Powered by `blink.cmp` for instantaneous, visually integrated suggestions.
 * Extensive LSP Support: Automated setup via `mason.nvim` for Python, Terraform, Docker, Ansible, Bash, Lua, and more.
-* Frictionless Navigation: Fast file and text searching using `Telescope`, paired with a structured sidebar via `Nvim-Tree`.
-* Refined UI: Clean aesthetics managed by `Lualine`, `Bufferline`, and `Smear-cursor` for smooth visual feedback.
+* Frictionless Navigation: Fast file and text searching using `telescope`, paired with a structured sidebar via `nvim-Tree`.
+* Refined UI: Clean aesthetics managed by `lualine`, `bufferline`, and `smear-cursor` for smooth visual feedback.
 * Modular Architecture: Responsibilities are strictly isolated into dedicated files, ensuring the codebase remains highly maintainable and easy to extend.
 
 ## 📥 Installation
@@ -33,7 +33,7 @@ To make the configuration setup as seamless as possible, I've created an automat
 curl -sL https://raw.githubusercontent.com/thomaspalma1/nvim/main/install.sh | bash
 ```
 
-*(Note: The script will automatically handle backing up your existing configuration and cloning this repository.)*
+*The script will automatically handle backing up your existing configuration and cloning this repository.*
 
 **2. Launch Neovim:**
 ```bash
@@ -45,7 +45,7 @@ nvim
 
 To ensure all features—especially fuzzy finding, syntax highlighting, and visual icons—function correctly, the following system dependencies are required:
 
-* Neovim version `0.11.0` or higher.
+* Neovim version `0.12.0` or higher.
 * A patched font (e.g., *JetBrainsMono Nerd Font*) set as your terminal's default to properly render icons in the statusline and file explorer.
 * Node.js and npm required by Mason to install and run certain language servers (e.g., `pyright`, `bashls`).
 * Python and pip required by Mason for Python-based tooling (e.g., `ruff`).
