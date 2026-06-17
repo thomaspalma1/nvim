@@ -49,7 +49,7 @@ Once you have successfully installed Neovim and confirmed it is working correctl
 To make the configuration setup as seamless as possible, I've created an automated installation script that handles the heavy lifting for you.
 
 > [!IMPORTANT]
-> It’s essential that you have already completed the previous topic[Dependencies] and carefully followed each section before continuing. This ensures that everything is properly configured so Neovim runs smoothly and the settings from this project are applied correctly without any issues.
+> It’s essential that you have already completed the previous topic: [Dependencies](#dependencies) and carefully followed each section before continuing. This ensures that everything is properly configured so Neovim runs smoothly and the settings from this project are applied correctly without any issues.
 
 **1. Run the installation script:**
 ```bash
