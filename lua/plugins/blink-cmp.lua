@@ -1,9 +1,11 @@
 vim.pack.add({
 	{
 		src = "https://github.com/saghen/blink.lib",
+		version = vim.version.range("1.*"),
 	},
 	{
 		src = "https://github.com/saghen/blink.cmp",
+		version = vim.version.range("1.*"),
 	},
 })
 
@@ -31,7 +33,10 @@ require("blink.cmp").setup({
 		-- code snippets, and finally active buffer words.
 		default = { "lsp", "path", "snippets", "buffer" },
 	},
-
+	-- Use the prebuilt Rust binary when available for the current platform,
+	-- falling back to the Lua implementation with a warning instead of
+	-- erroring out when no prebuilt binary exists for the system.
+	fuzzy = { implementation = "prefer_rust_with_warning" },
 	-- Enable the floating signature help window to automatically display
 	-- function parameter documentation and type hints while typing
 	-- inside parentheses.
