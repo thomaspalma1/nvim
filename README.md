@@ -5,7 +5,7 @@
    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg" width="50" height="50"/>
 </p>
 
-Repository dedicated to my Neovim configuration.
+A modern and highly modular Neovim configuration for my daily workflow
 
 ## 🎯 About the Project
 
