@@ -23,15 +23,15 @@ A highly modular, performance-oriented `Neovim` Configuration written entirely i
 Since this configuration was built from scratch without relying on distributions or configuration frameworks such as LazyVim, NvChad, or similar projects and some dependencies had to be installed manually along the way. To ensure all features (especially fuzzy finding, syntax highlighting, and visual icons) function correctly, the following system dependencies are required:
 
 * `Neovim` version `0.12.0` or higher.
-* A patched font (e.g., *JetBrainsMono Nerd Font*) set as your terminal's default to properly render icons in the statusline and file explorer.
+* A patched font (e.g., *`JetBrainsMono Nerd Font`* set as your terminal's default to properly render icons in the statusline and file explorer.
 * `Node.js` and `npm`, required by `Mason` to install and run certain language servers (e.g., `pyright`, `bashls`).
 * `Python` and `pip`, required by `Mason` for `Python`-based tooling (e.g., `ruff`).
-* `LuaRocks`, required for `Lua` package management.
 * `ripgrep`, required for fast fuzzy finding.
+* `LuaRocks`, required for `Lua` package management.
 * `fd-find`, required as a faster alternative to `find`.
 * `python3-venv`, required to create isolated `Python` environments for tooling like `ruff`.
 
-In my case, I'm using `Linux Mint`, which is based on `Debian`/`Ubuntu`, so the package names below correspond to Debian-based distributions. Depending on your system, you may already have some of these installed; if not, install them manually, keeping in mind that package names can vary across operating systems and Linux distributions. Use the list below as a reference—if you're on a different system, look for the equivalent packages in your platform's package manager:
+In my case, I'm using `Linux Mint`, which is based on `Debian`/`Ubuntu`, so the package names below correspond to Debian-based distributions. Depending on your system, you may already have some of these installed; if not, install them manually, keeping in mind that package names can vary across operating systems and Linux distributions. Use the list below as a reference if you're on a different system, look for the equivalent packages in your platform's package manager:
 
 ```bash
 sudo apt update
@@ -40,16 +40,16 @@ sudo apt install ripgrep fd-find python3-venv
 
 ## 📥 Installation
 
-Before we start, please note that this repository does not cover how to install `Neovim` itself. 
+Before we start, please note that this repository **does not cover** how to install `Neovim` itself. 
 
-Because the installation process varies significantly depending on your operating system (`Linux`, `macOS`, or `Windows`) and package manager, the best approach is to follow the [official `Neovim` installation guide](https://github.com/neovim/neovim/blob/master/INSTALL.md) for instructions tailored to your specific environment.
+Because the installation process varies significantly depending on your operating system (`Linux`, `macOS`, or `Windows`) and package manager, the best approach is to follow the [official Neovim installation guide](https://github.com/neovim/neovim/blob/master/INSTALL.md) for instructions tailored to your specific environment.
 
-Once you have successfully installed `Neovim` and confirmed it is working correctly, you are ready to apply this project's files. 
+Once you have successfully installed `Neovim` and confirmed it is **working correctly**, you are ready to apply this project's files. 
 
 To make the configuration setup as seamless as possible, I've created an automated installation script that handles the heavy lifting for you.
 
 > [!IMPORTANT]
-> It’s essential that you have already completed the previous topic: [Dependencies](#dependencies) and carefully followed each section before continuing. This ensures that everything is properly configured so `Neovim` runs smoothly and the settings from this project are applied correctly without any issues.
+> It’s essential that you have already completed the previous topic: [Dependencies](#-dependencies) and carefully followed each section before continuing. This ensures that everything is properly configured so `Neovim` runs smoothly and the settings from this project are applied correctly without any issues.
 
 **1. Run the installation script:**
 ```bash
@@ -68,7 +68,7 @@ nvim
 
 The image below shows how this project's directories are organized. It also includes brief notes explaining the purpose of each file and folder.
 
-One of `Neovim`'s greatest strengths is its flexibility. There is no single "correct" way to organize configuration files. While the community widely adopts certain structures, everyone is free to adapt their setup to fit their own needs and preferences.
+One of `Neovim`'s greatest strengths is its flexibility. There is no single "correct" way to organize configuration files. While the community widely adopts certain structures, everyone is **free to adapt their setup to fit their own needs and preferences**.
 
 In my case, I chose to organize the files as shown below. This structure gives me greater control over each part of the configuration while keeping everything organized by context and responsibility. As a result, it's much easier to locate, understand, and modify any configuration whenever needed.
 
@@ -94,7 +94,7 @@ Common customizations include:
 
 ## ⚠️ Known Limitations
 
-* **Manual Dependencies:** Some plugins require external system dependencies to be installed manually (such as `ripgrep`, `fd`, Node.js, and `Python` virtual environments), which are not handled automatically by the `Neovim` package manager.
+* **Manual Dependencies:** Some plugins require external system dependencies to be installed manually (such as `ripgrep`, `fd`, `Node.js`, and `Python` virtual environments), which are not handled automatically by the `Neovim` package manager.
 * **OS Compatibility:** This configuration was primarily built and tested on `Linux` (`Ubuntu`/`Debian`). While `Neovim` is cross-platform, macOS or `Windows` (`WSL`) users might need to adapt specific paths, clipboard providers, or `Mason` dependencies to ensure full functionality.
 * **Initial Loading Time:** The very first time you launch the editor, the bootstrap process might take a few minutes as `Mason` downloads and compiles the required language server binaries in the background.
 
