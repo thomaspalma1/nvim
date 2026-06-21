@@ -32,7 +32,7 @@ Since this configuration was built from scratch without relying on distributions
 * `python3-venv`, required to create isolated `Python` environments for tooling like `ruff`.
 
 > [!TIP]
-> Installing `Cargo` (`Rust`'s package manager) is optional, but recommended. `blink.cmp` ships with a `Rust`-based fuzzy matcher that delivers noticeably better fuzzy finding performance than its pure `Lua` fallback, which is the implementation used automatically when `Cargo` isn't available on your system.
+> Installing [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) (`Rust`'s package manager) is optional, but recommended. `blink.cmp` ships with a `Rust`-based fuzzy matcher that delivers noticeably better fuzzy finding performance than its pure `Lua` fallback, which is the implementation used automatically when `Cargo` isn't available on your system.
 
 In my case, I'm using `Linux Mint`, which is based on `Debian/Ubuntu`, so the package names below correspond to Debian-based distributions. Depending on your system, you may already have some of these installed; if not, install them manually, keeping in mind that package names can vary across operating systems and Linux distributions. Use the list below as a reference if you're on a different system, and look for the equivalent packages in your platform's package manager:
 
@@ -103,6 +103,4 @@ Common customizations include:
 
 ## 🔮 Future Improvements
 
-*Items marked with `✓` have already been implemented; unmarked items are still planned.*
-
-* Introduce `conform.nvim` to automatically format `Terraform`, `Python`, and `Lua` files on save.
+- [ ] Introduce `conform.nvim` to automatically format `Terraform`, `Python`, and `Lua` files on save.
