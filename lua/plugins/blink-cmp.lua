@@ -12,7 +12,11 @@ require("blink.cmp").setup({
 	-- Configure the keyboard behavior using the 'super-tab' preset,
 	-- allowing intuitive navigation through completion options with
 	-- the Tab key and quick confirmation using Enter.
-	keymap = { preset = "super-tab" },
+	keymap = { 
+		preset = "super-tab",
+		-- Accept suggestion if menu is open, otherwise fallback to normal Enter behavior
+		["<CR>"] = { "accept", "fallback" },
+	},
 
 	appearance = {
 		-- Inherit highlight groups from the active colorscheme to ensure
