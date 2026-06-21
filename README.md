@@ -14,16 +14,16 @@ A highly modular, performance-oriented `Neovim` Configuration written entirely i
 **Core Highlights:**
 * **Intelligent Autocompletion:** Powered by `blink.cmp` for instantaneous, visually integrated suggestions.
 * **Extensive LSP Support:** Automated setup via `mason.nvim` for `Python`, `Terraform`, `Docker`, `Ansible`, `Bash`, `Lua`, and more.
-* **Frictionless Navigation:** Fast file and text searching using `telescope`, paired with a structured sidebar via `nvim-Tree`.
+* **Frictionless Navigation:** Fast file and text searching using `telescope`, paired with a structured sidebar via `nvim-tree`.
 * **Refined UI:** Clean aesthetics managed by `lualine`, `bufferline`, and `smear-cursor` for smooth visual feedback.
 * **Modular Architecture:** Responsibilities are strictly isolated into dedicated files, ensuring the codebase remains highly maintainable and easy to extend.
 
 ## 📦 Dependencies
 
-Since this configuration was built from scratch without relying on distributions or configuration frameworks such as LazyVim, NvChad, or similar projects and some dependencies had to be installed manually along the way. To ensure all features (especially fuzzy finding, syntax highlighting, and visual icons) function correctly, the following system dependencies are required:
+Since this configuration was built from scratch without relying on distributions or configuration frameworks such as `LazyVim`, `NvChad`, or similar projects, some dependencies had to be installed manually along the way. To ensure all features (especially fuzzy finding, syntax highlighting, and visual icons) function correctly, the following system dependencies are required:
 
 * `Neovim` version `0.12.0` or higher.
-* A patched font (e.g., *`JetBrainsMono Nerd Font`* set as your terminal's default to properly render icons in the statusline and file explorer.
+* A patched font (e.g., `JetBrainsMono Nerd Font`) set as your terminal's default to properly render icons in the statusline and file explorer.
 * `Node.js` and `npm`, required by `Mason` to install and run certain language servers (e.g., `pyright`, `bashls`).
 * `Python` and `pip`, required by `Mason` for `Python`-based tooling (e.g., `ruff`).
 * `ripgrep`, required for fast fuzzy finding.
@@ -31,12 +31,31 @@ Since this configuration was built from scratch without relying on distributions
 * `fd-find`, required as a faster alternative to `find`.
 * `python3-venv`, required to create isolated `Python` environments for tooling like `ruff`.
 
-In my case, I'm using `Linux Mint`, which is based on `Debian`/`Ubuntu`, so the package names below correspond to Debian-based distributions. Depending on your system, you may already have some of these installed; if not, install them manually, keeping in mind that package names can vary across operating systems and Linux distributions. Use the list below as a reference if you're on a different system, look for the equivalent packages in your platform's package manager:
+> [!TIP]
+> Installing `Cargo` (`Rust`'s package manager) is optional, but recommended. `blink.cmp` ships with a `Rust`-based fuzzy matcher that delivers noticeably better fuzzy finding performance than its pure `Lua` fallback, which is the implementation used automatically when `Cargo` isn't available on your system.
+
+In my case, I'm using `Linux Mint`, which is based on `Debian/Ubuntu`, so the package names below correspond to Debian-based distributions. Depending on your system, you may already have some of these installed; if not, install them manually, keeping in mind that package names can vary across operating systems and Linux distributions. Use the list below as a reference if you're on a different system, and look for the equivalent packages in your platform's package manager:
 
 ```bash
 sudo apt update
-sudo apt install ripgrep fd-find python3-venv
+sudo apt install ripgrep fd-find python3-venv luarocks
 ```
+
+## 🏗️ Project Structure
+
+The image below shows how this project's directories are organized. It also includes brief notes explaining the purpose of each file and folder.
+
+One of `Neovim`'s greatest strengths is its flexibility. There is no single "correct" way to organize configuration files. While the community widely adopts certain structures, everyone is **free to adapt their setup to fit their own needs and preferences**.
+
+In my case, I chose to organize the files as shown below. This structure gives me greater control over each part of the configuration while keeping everything organized by context and responsibility. As a result, it's much easier to locate, understand, and modify any configuration whenever needed.
+
+![ProjectStructure](docs/config_structure_overview.png)
+
+As you can see in the image, there are short notes next to each directory and file, providing a concise explanation of their purpose.
+
+If you're interested, I encourage you to explore those directories and files. Each file contains a more detailed description explaining what it does and the purpose behind each configuration.
+
+This makes it easier to understand the project's structure and helps you see not only how the configurations were implemented, but also the reasoning behind each decision.
 
 ## 📥 Installation
 
@@ -64,22 +83,6 @@ nvim
 ```
 *Upon the first launch, the configuration will automatically set itself up, downloading the package manager and installing all defined plugins and language servers. Restart `Neovim` once the process is complete.*
 
-## 🏗️ Project Structure
-
-The image below shows how this project's directories are organized. It also includes brief notes explaining the purpose of each file and folder.
-
-One of `Neovim`'s greatest strengths is its flexibility. There is no single "correct" way to organize configuration files. While the community widely adopts certain structures, everyone is **free to adapt their setup to fit their own needs and preferences**.
-
-In my case, I chose to organize the files as shown below. This structure gives me greater control over each part of the configuration while keeping everything organized by context and responsibility. As a result, it's much easier to locate, understand, and modify any configuration whenever needed.
-
-![ProjectStructure](docs/config_structure_overview.png)
-
-As you can see in the image, there are short notes next to each directory and file, providing a concise explanation of their purpose.
-
-If you're interested, I encourage you to explore those directories and files. Each file contains a more detailed description explaining what it does and the purpose behind each configuration.
-
-This makes it easier to understand the project's structure and helps you see not only how the configurations were implemented, but also the reasoning behind each decision.
-
 ## 🛠️ Customization
 
 This configuration was designed to be highly modular and easy to customize. Because each component is isolated in its own directory, you can tweak specific behaviors without breaking the entire editor. 
@@ -95,9 +98,11 @@ Common customizations include:
 ## ⚠️ Known Limitations
 
 * **Manual Dependencies:** Some plugins require external system dependencies to be installed manually (such as `ripgrep`, `fd`, `Node.js`, and `Python` virtual environments), which are not handled automatically by the `Neovim` package manager.
-* **OS Compatibility:** This configuration was primarily built and tested on `Linux` (`Ubuntu`/`Debian`). While `Neovim` is cross-platform, macOS or `Windows` (`WSL`) users might need to adapt specific paths, clipboard providers, or `Mason` dependencies to ensure full functionality.
+* **OS Compatibility:** This configuration was primarily built and tested on `Linux` (`Ubuntu/Debian`). While `Neovim` is cross-platform, `macOS` or `Windows` (`WSL`) users might need to adapt specific paths, clipboard providers, or `Mason` dependencies to ensure full functionality.
 * **Initial Loading Time:** The very first time you launch the editor, the bootstrap process might take a few minutes as `Mason` downloads and compiles the required language server binaries in the background.
 
 ## 🔮 Future Improvements
+
+*Items marked with `✓` have already been implemented; unmarked items are still planned.*
 
 * Introduce `conform.nvim` to automatically format `Terraform`, `Python`, and `Lua` files on save.
