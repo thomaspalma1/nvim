@@ -9,7 +9,7 @@ A modern and highly modular Neovim configuration for my daily workflow
 
 ## 🎯 About the Project
 
-A highly modular, performance-oriented `Neovim` Configuration written entirely in `Lua`. I built this setup primarily to optimize my own daily workflow as a `DevOps` engineer and `Back-end` developer, but it is perfectly suited for anyone who shares these same needs. It provides a robust development environment right out of the box, featuring real-time code intelligence, fast file navigation, and a refined, distraction-free visual interface.
+A highly modular, performance-oriented `Neovim` Configuration written entirely in `Lua`. I built this setup primarily to optimize my own daily workflow as a `DevOps` engineer and `Back-end` developer, but it is perfectly suited for anyone who shares these same needs. It provides a robust development environment right out of the box, featuring **real-time code intelligence**, **fast file navigation**, and a refined, **distraction-free visual interface**.
 
 **Core Highlights:**
 * **Intelligent Autocompletion:** Powered by `blink.cmp` for instantaneous, visually integrated suggestions.
@@ -20,19 +20,19 @@ A highly modular, performance-oriented `Neovim` Configuration written entirely i
 
 ## 📦 Dependencies
 
-Since this configuration was built from scratch without relying on distributions or configuration frameworks such as `LazyVim`, `NvChad`, or similar projects, some dependencies had to be installed manually along the way. To ensure all features (especially fuzzy finding, syntax highlighting, and visual icons) function correctly, the following system dependencies are required:
+Since this configuration was **built from scratch** without relying on distributions or configuration frameworks such as `LazyVim`, `NvChad`, or similar projects, some dependencies had to be installed manually along the way. To ensure all features (especially fuzzy finding, syntax highlighting, and visual icons) function correctly, the following system dependencies are required:
 
-* `Neovim` version `0.12.0` or higher.
-* A patched font (e.g., `JetBrainsMono Nerd Font`) set as your terminal's default to properly render icons in the statusline and file explorer.
-* `Node.js` and `npm`, required by `Mason` to install and run certain language servers (e.g., `pyright`, `bashls`).
-* `Python` and `pip`, required by `Mason` for `Python`-based tooling (e.g., `ruff`).
-* `ripgrep`, required for fast fuzzy finding.
-* `LuaRocks`, required for `Lua` package management.
-* `fd-find`, required as a faster alternative to `find`.
-* `python3-venv`, required to create isolated `Python` environments for tooling like `ruff`.
+* **Editor:** `Neovim` version `0.12.0` or higher.
+* **Font:** A patched font (e.g., `JetBrainsMono Nerd Font`) set as your terminal's default to properly render icons in the statusline and file explorer.
+* **Language Servers:** `Node.js` and `npm`, required by `Mason` to install and run certain language servers (e.g., `pyright`, `bashls`).
+* **Python Tooling:** `Python` and `pip`, required by `Mason` for `Python`-based tooling (e.g., `ruff`).
+* **Fuzzy Finding:** `ripgrep`, required for fast fuzzy finding.
+* **Lua Package Management:** `LuaRocks`, required for `Lua` package management.
+* **File Search:** `fd-find`, required as a faster alternative to `find`.
+* **Isolated Environments:** `python3-venv`, required to create isolated `Python` environments for tooling like `ruff`.
 
 > [!TIP]
-> Installing [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) (`Rust`'s package manager) is optional, but recommended. `blink.cmp` ships with a `Rust`-based fuzzy matcher that delivers noticeably better fuzzy finding performance than its pure `Lua` fallback, which is the implementation used automatically when `Cargo` isn't available on your system.
+> Installing [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) (`Rust`'s package manager) is optional, but **recommended**. `blink.cmp` ships with a `Rust`-based fuzzy matcher that delivers noticeably better fuzzy finding performance than its pure `Lua` fallback, which is the implementation used automatically when `Cargo` isn't available on your system.
 
 In my case, I'm using `Linux Mint`, which is based on `Debian/Ubuntu`, so the package names below correspond to Debian-based distributions. Depending on your system, you may already have some of these installed; if not, install them manually, keeping in mind that package names can vary across operating systems and Linux distributions. Use the list below as a reference if you're on a different system, and look for the equivalent packages in your platform's package manager:
 
@@ -45,7 +45,7 @@ sudo apt install ripgrep fd-find python3-venv luarocks
 
 The image below shows how this project's directories are organized. It also includes brief notes explaining the purpose of each file and folder.
 
-One of `Neovim`'s greatest strengths is its flexibility. There is no single "correct" way to organize configuration files. While the community widely adopts certain structures, everyone is **free to adapt their setup to fit their own needs and preferences**.
+One of `Neovim`'s greatest strengths is its **flexibility**. There is no single "correct" way to organize configuration files. While the community widely adopts certain structures, everyone is **free to adapt their setup to fit their own needs and preferences**.
 
 In my case, I chose to organize the files as shown below. This structure gives me greater control over each part of the configuration while keeping everything organized by context and responsibility. As a result, it's much easier to locate, understand, and modify any configuration whenever needed.
 
