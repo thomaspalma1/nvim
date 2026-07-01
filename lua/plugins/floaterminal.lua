@@ -49,7 +49,9 @@ local toggle_terminal = function()
 		end
 	else
 		vim.api.nvim_win_hide(state.floating.win)
+		return
 	end
+	vim.cmd("startinsert")
 end
 
 -- Example usage:
