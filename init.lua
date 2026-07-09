@@ -18,7 +18,6 @@ require("plugins.nvim-tree")
 require("plugins.telescope")
 require("plugins.indent-blankline")
 require("plugins.smear-cursor")
-require("plugins.floaterminal")
 require("plugins.live-preview")
 
 -- Load keybindings specific to plugins only after the plugins themselves
