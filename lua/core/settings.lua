@@ -30,6 +30,7 @@ vim.cmd.syntax("on") -- Enable syntax highlighting
 -- Editor Behavior
 vim.opt.updatetime = 250 -- Faster completion and better plugin responsiveness
 vim.opt.clipboard = "unnamedplus" -- Use system clipboard for copy/paste
+vim.opt.virtualedit = "onemore" -- Allows the cursor to move one column beyond the end of the line.
 
 -- Encoding
 vim.opt.encoding = "utf-8" -- Set file encoding to UTF-8
