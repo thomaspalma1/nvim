@@ -129,6 +129,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			return
 		end
 
+		-- Common virtual environment directory names, in order of
+		-- precedence. ".venv" is the default used by uv, venv, and
+		-- virtualenv, so it is checked first.
 		local candidates = { ".venv", "venv", "env" }
 		for _, name in ipairs(candidates) do
 			local python_path = root_dir .. "/" .. name .. "/bin/python"
@@ -137,11 +140,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
 					python = { pythonPath = python_path },
 				})
 				client:notify("workspace/didChangeConfiguration", { settings = client.settings })
-				vim.notify("pyright pythonPath setado: " .. python_path)
+				vim.notify(
+					string.format("[pyright] Interpreter resolved: %s", python_path),
+					vim.log.levels.INFO,
+					{ title = "LSP" }
+				)
 				return
 			end
 		end
 
-		vim.notify("pyright: nenhum venv encontrado em " .. root_dir, vim.log.levels.WARN)
+		vim.notify(
+			string.format("[pyright] No virtual environment found in: %s", root_dir),
+			vim.log.levels.WARN,
+			{ title = "LSP" }
+		)
 	end,
 })
