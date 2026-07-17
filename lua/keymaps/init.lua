@@ -40,3 +40,26 @@ vim.keymap.set("n", "<C-k>", ":m .-2<CR>==")
 -- Allow a fast and ergonomic exit from insert mode by mapping the 'jk' 
 -- sequence to the Escape key, keeping hands positioned on the home row.
 vim.keymap.set("i", "jk", "<Esc>")
+
+-- Copies all error messages from the current line to the system clipboard (+)
+vim.keymap.set("n", "<leader>ce", function()
+	-- Gets diagnostics from the current line (Neovim line index starts at 0)
+	local diagnostics = vim.diagnostic.get(0, { lnum = vim.fn.line(".") - 1 })
+
+	if #diagnostics > 0 then
+		local messages = {}
+		-- Loops through all diagnostics found on the line
+		for _, diag in ipairs(diagnostics) do
+			table.insert(messages, diag.message)
+		end
+
+		-- Joins all messages separating them with a newline
+		local full_message = table.concat(messages, "\n")
+
+		-- Copies the full text to the OS clipboard register
+		vim.fn.setreg("+", full_message)
+		print("All errors copied to clipboard!")
+	else
+		print("No error on this line.")
+	end
+end, { desc = "Copy all current line errors" })
