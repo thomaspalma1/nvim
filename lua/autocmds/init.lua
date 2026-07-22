@@ -27,3 +27,33 @@ vim.api.nvim_create_autocmd("CursorHold", {
     vim.diagnostic.open_float(nil, opts)
   end
 })
+
+-- Auto-enter insert mode when a terminal is opened,
+-- and redirect cursor-movement keys back to insert mode
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "*",
+  callback = function()
+    -- Start in insert mode as soon as the terminal opens
+    vim.cmd("startinsert")
+
+    local opts = { buffer = true, noremap = true, silent = true }
+    -- Keys that would normally move the cursor letter by letter
+    local keys_back_to_insert = { "h", "l", "<Left>", "<Right>" }
+
+    for _, key in ipairs(keys_back_to_insert) do
+      -- Instead of moving the cursor, jump back to insert mode
+      vim.keymap.set("n", key, function()
+        vim.cmd("startinsert")
+      end, opts)
+    end
+  end,
+})
+
+-- Auto-enter insert mode when switching back to a terminal buffer
+-- (covers buffer switching via Bufferline, e.g. <Space><Tab>)
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "term://*",
+  callback = function()
+    vim.cmd("startinsert")
+  end,
+})
