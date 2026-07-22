@@ -41,6 +41,9 @@ vim.keymap.set("n", "<C-k>", ":m .-2<CR>==")
 -- sequence to the Escape key, keeping hands positioned on the home row.
 vim.keymap.set("i", "jk", "<Esc>")
 
+-- Map jk to exit terminal insert mode and go back to normal mode
+vim.keymap.set("t", "jk", [[<C-\><C-n>]], { noremap = true, silent = true })
+
 -- Copies all error messages from the current line to the system clipboard (+)
 vim.keymap.set("n", "<leader>ce", function()
 	-- Gets diagnostics from the current line (Neovim line index starts at 0)
