@@ -57,3 +57,19 @@ vim.api.nvim_create_autocmd("BufEnter", {
     vim.cmd("startinsert")
   end,
 })
+
+-- Workaround added 2026-07-30
+-- Alacritty 0.13.2 / Neovim 0.12.2
+--
+-- Fixes duplicated Enter/Backspace/Tab in Neovim under Alacritty.
+-- Neovim enables the Kitty Keyboard Protocol on startup, but Alacritty
+-- has a bug where it still sends both press and release events for these
+-- keys, so each keypress registers twice.
+--
+-- This workaround should be removed once the upstream bug is resolved
+-- in a stable Alacritty release.
+vim.api.nvim_create_autocmd('UIEnter', {
+  callback = function()
+    io.write('\x1b[<u')
+  end,
+})
